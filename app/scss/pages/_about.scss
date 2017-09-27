@@ -209,6 +209,10 @@
         height: 50px;
         @include center;
         @include flex(space-between);
+
+        @media (max-width: 430px) {
+            width: 125%;
+        }
     }
 
     .play-button {

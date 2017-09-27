@@ -10,12 +10,15 @@
     @media (max-width: 1020px) {
         margin: 0 40px;
     }
+
     @media (max-width: 800px) {
         top: 70%;
         flex-direction: column;
     }
+
     @media (max-width: 530px) {
         margin: 0;
+        position: static;
     }
 
     .section-header {
@@ -23,6 +26,7 @@
         margin: 0;
         font-size: 24px;
     }
+
     .section-header:after {
         bottom: -20px;
         height: 2px;
@@ -37,6 +41,7 @@
     @media (max-width: 920px) {
         padding: 20px 30px;
     }
+
     @media (max-width: 800px) {
         width: 100%;
     }
@@ -52,6 +57,10 @@
 
         @media (max-width: 1180px) {
             width: 44%;
+        }
+
+        @media (max-width: 394px) {
+            width: 100%;
         }
     }
 
@@ -81,6 +90,7 @@
         &[placeholder] {
             color: #232323;
             opacity: 1;
+            text-transform: uppercase;
             font-family: $primary-font;
             font-weight: 600;
             font-size: 10px;
@@ -113,10 +123,6 @@
     .form__button {
         @include button($primary-color, $primary-color);
         margin-top: 20px;
-
-        @media (max-width: 1012px) {
-
-        }
 
         &:hover, &:focus {
             cursor: pointer;

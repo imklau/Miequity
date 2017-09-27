@@ -127,6 +127,11 @@
     @include background($contact-bg, fixed);
     margin-bottom: 350px;
 
+    @media (max-width: 530px) {
+        height: 330px;
+        margin-bottom: 0;
+    }
+
     .site-header__header {
         width: auto;
         left: 80px;
@@ -136,6 +141,10 @@
 
         @media (max-width: 800px) {
             top: 160px;
+        }
+
+        @media (max-width: 480px) {
+            left: 20px;
         }
     }
 
@@ -147,6 +156,10 @@
 
         @media (max-width: 800px) {
             top: 240px;
+        }
+
+        @media (max-width: 480px) {
+            left: 20px;
         }
 
     }
