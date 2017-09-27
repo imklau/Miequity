@@ -1,0 +1,242 @@
+.features {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 40px 0 100px 0;
+    @include flex(center);
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
+
+    @media (max-width: 920px) {
+        max-width: 80%;
+    }
+
+    @media (max-width: 770px) {
+        max-width: 85%;
+        flex-direction: column;
+        padding-bottom: 0;
+    }
+    @media (max-width: 460px) {
+        max-width: 95%;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 6%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 94%;
+        background: $primary-color;
+
+        @media (max-width: 770px) {
+            content: none;
+        }
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 2px;
+        background: $primary-color;
+
+        @media (max-width: 770px) {
+            content: none;
+        }
+    }
+
+    .col {
+        width: 50%;
+
+        @media (max-width: 770px) {
+            width: 100%;
+        }
+
+        &--left {
+            padding-right: 80px;
+
+            .feature:before {
+                right: -80px;
+            }
+
+            @media (max-width: 770px) {
+                padding: 20px;
+            }
+        }
+
+        &--right {
+            padding-left: 80px;
+
+            .feature:before {
+                left: -80px;
+            }
+
+            @media (max-width: 770px) {
+                padding: 20px;
+            }
+        }
+    }
+}
+
+.feature {
+    margin-top: 140px;
+    position: relative;
+
+    @media (max-width: 770px) {
+        margin-top: 50px;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 38px;
+        width: 50px;
+        height: 2px;
+        background: $primary-color;
+
+        @media (max-width: 907px) {
+            top: 40px;
+        }
+
+        @media (max-width: 886px) {
+            top: 44px;
+        }
+
+        @media (max-width: 842px) {
+            top: 48px;
+        }
+
+        @media (max-width: 770px) {
+            content: none;
+        }
+    }
+
+    &__info {
+        text-transform: uppercase;
+        font-size: 10px;
+        font-family: $primary-font;
+        font-weight: 600;
+        letter-spacing: 1px;
+        color: $article-text;
+
+        @media (max-width: 770px) {
+            font-size: 8px;
+        }
+    }
+
+    &__heading {
+        margin: 10px 0;
+        padding: 0 0 25px;
+        font-family: $primary-font--serif;
+        font-weight: 400;
+        font-size: 32px;
+        color: $text-color;
+        position: relative;
+
+        @media (max-width: 820px) {
+            font-size: 26px;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: $primary-color;
+            border-radius: 10px;
+
+            @media (max-width: 770px) {
+                width: 50px;
+                height: 2px;
+            }
+        }
+    }
+
+    &__desc {
+        margin: 20px 0;
+        font-size: 12px;
+        font-family: $primary-font;
+        line-height: 1.6;
+        color: $article-text;
+
+        @media (max-width: 920px) {
+            font-size: 11px;
+        }
+    }
+}
+.feature--no-margin {
+    margin-top: 10px;
+}
+
+.how-we-work {
+    padding-bottom: 60px;
+    text-align: center;
+
+    &__graphic {
+        max-width: 900px;
+        margin: 0 auto;
+        position: relative;
+
+        @media (max-width: 920px) {
+            max-width: 80%;
+        }
+    }
+
+    &__company-name {
+        @include position(absolute, 50%, 12px);
+        font-family: $primary-font;
+        font-size: 12px;
+        writing-mode: vertical-rl;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        transform: rotate(180deg) translateY(50%);
+        color: #ffffff;
+    }
+
+    &__img {
+        width: 100%;
+    }
+
+    .controls {
+        width: 115%;
+        height: 50px;
+        @include center;
+        @include flex(space-between);
+    }
+
+    .play-button {
+        width: 100px;
+        height: 100px;
+        background: transparent;
+        @include center;
+
+        @media (max-width: 700px) {
+            width: 80px;
+        }
+    }
+
+    .play-button__img {
+        width: 100%;
+    }
+
+    .control-button__img {
+        width: 15px;
+    }
+
+}
+
+.team {
+    padding: 20px 60px;
+    position: relative;
+
+    @media (max-width: 700px) {
+        padding: 20px;
+    }
+}
