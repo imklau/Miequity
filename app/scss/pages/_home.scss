@@ -59,7 +59,7 @@
         }
     }
 
-    .section-header {
+    .section-heading {
         @media (max-width: 800px) {
             margin: 5px auto 50px auto;
         }
@@ -79,7 +79,7 @@
         margin-top: 60px;
         font-family: $primary-font--serif;
         font-weight: 300;
-        font-size: 12px;
+        font-size: 14px;
         color: #767481;
         line-height: 1.7;
     }
@@ -87,7 +87,7 @@
     &__text--light {
         margin-top: 20px;
         color: #9a98a0;
-        font-size: 11px;
+        font-size: 12px;
     }
 
     &__button {

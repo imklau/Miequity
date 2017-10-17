@@ -22,7 +22,7 @@
         color: $text-color;
     }
 
-    &__header {
+    &__heading {
         @include center();
         width: 600px;
         text-align: center;
@@ -108,11 +108,11 @@
     }
 }
 
-.header--investments {
+.heading--investments {
     height: 500px;
     background: #ffffff;
 
-    .site-header__header {
+    .site-header__heading {
         color: $text-color;
     }
 
@@ -125,14 +125,13 @@
 .site-header--contact {
     height: 700px;
     @include background($contact-bg, fixed);
-    margin-bottom: 350px;
 
     @media (max-width: 530px) {
         height: 330px;
         margin-bottom: 0;
     }
 
-    .site-header__header {
+    .site-header__heading {
         width: auto;
         left: 80px;
         top: 35%;
