@@ -1,5 +1,5 @@
 # Miequity
-> A website based on free PSD file
+> Fully responsive website based on free PSD file.
 
 [DEMO](https://noeemi.github.io/Miequity/app)
 
