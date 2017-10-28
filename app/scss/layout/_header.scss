@@ -127,7 +127,7 @@
     @include background($contact-bg, fixed);
 
     @media (max-width: 530px) {
-        height: 330px;
+        height: 520px;
         margin-bottom: 0;
     }
 
@@ -142,8 +142,8 @@
             top: 160px;
         }
 
-        @media (max-width: 480px) {
-            left: 20px;
+        @media (max-width: 530px) {
+            left: 30px;
         }
     }
 
@@ -157,8 +157,8 @@
             top: 240px;
         }
 
-        @media (max-width: 480px) {
-            left: 20px;
+        @media (max-width: 530px) {
+            left: 30px;
         }
 
     }
