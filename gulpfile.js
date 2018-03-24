@@ -7,6 +7,7 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     plumber = require('gulp-plumber'),
     nunjucksRender = require('gulp-nunjucks-render'),
+    stylelint = require('gulp-stylelint'),
     del = require('del')
 
 gulp.task('html', () => {
@@ -20,6 +21,9 @@ gulp.task('html', () => {
 gulp.task('sass', () => {
   return gulp.src('resources/assets/scss/*.scss')
              .pipe(plumber())
+             .pipe(stylelint({
+               reporters: [{ formatter: 'string', console: true }]
+             }))
              .pipe(sass.sync({
                 outputStyle: 'compressed'
              }))
