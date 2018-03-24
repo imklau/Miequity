@@ -1,0 +1,18 @@
+$primary-font: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', non-serif;
+$secondary-font: 'Roboto Slab', 'Helvetica Neue', 'Helvetica', 'Arial', non-serif;
+$line-height: 2;
+
+$colors: (
+  primary: #efae7c,
+  secondary: #647267,
+  dark-gray: #423f57,
+  light-gray: #767481
+);
+
+$breakpoints: (
+  small: 480px,
+  medium: 768px,
+  large: 1024px,
+  xlarge: 1200px,
+  xxlarge: 1440px
+);

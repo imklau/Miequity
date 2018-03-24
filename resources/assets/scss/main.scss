@@ -1,18 +1,22 @@
 // -------------------------------
 // Variables
-
+@import 'variables';
 
 // -------------------------------
 // Functions
-
+@import 'functions/get-color';
+@import 'functions/breakpoint';
 
 // -------------------------------
 // Generic
-
+@import 'generic/general';
+@import 'generic/typography';
 
 // -------------------------------
 // Objects
-
+@import 'objects/container';
+@import 'objects/heading';
+@import 'objects/paragraph';
 
 // -------------------------------
 // Components
