@@ -4,7 +4,8 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "gulp build",
+    "watch": "gulp watch"
   },
   "author": "Klaudia Zawodnik",
   "license": "MIT",
@@ -14,6 +15,7 @@
     "gulp": "^3.9.1",
     "gulp-htmlmin": "^3.0.0",
     "gulp-imagemin": "^3.3.0",
+    "gulp-nunjucks-render": "^2.2.2",
     "gulp-plumber": "^1.1.0",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^3.0.0",

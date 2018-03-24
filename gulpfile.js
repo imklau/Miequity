@@ -1,75 +1,68 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var browserSync = require('browser-sync').create();
-var imagemin = require('gulp-imagemin');
-var runSequence = require('run-sequence');
-var htmlmin = require('gulp-htmlmin');
-var uglify = require('gulp-uglify');
-var plumber = require('gulp-plumber');
-var del = require('del');
+var gulp = require('gulp'),
+    sass = require('gulp-sass'),
+    browserSync = require('browser-sync').create(),
+    imagemin = require('gulp-imagemin'),
+    runSequence = require('run-sequence'),
+    htmlmin = require('gulp-htmlmin'),
+    uglify = require('gulp-uglify'),
+    plumber = require('gulp-plumber'),
+    nunjucksRender = require('gulp-nunjucks-render'),
+    del = require('del')
 
-gulp.task('sass', function() {
-    return gulp.src('app/scss/main.scss')
-               .pipe(plumber())
-               .pipe(sass.sync({
-                   outputStyle: 'compressed'
-               }))
-               .pipe(gulp.dest('app/css'))
-               .pipe(browserSync.stream());
-});
+gulp.task('html', () => {
+  return gulp.src('resources/views/*.html')
+             .pipe(nunjucksRender({
+                path: ['resources/views']
+             }))
+             .pipe(gulp.dest('public'))
+})
 
-gulp.task('server', function() {
-    browserSync.init({
-        server: 'app'
-    });
-});
+gulp.task('sass', () => {
+  return gulp.src('resources/assets/scss/*.scss')
+             .pipe(plumber())
+             .pipe(sass.sync({
+                outputStyle: 'compressed'
+             }))
+             .pipe(gulp.dest('public/css'))
+})
 
-gulp.task('watch', function() {
-    gulp.watch('app/scss/*/*.scss', ['sass']);
-    gulp.watch(['app/*.html', 'app/js/.js'], browserSync.reload);
-});
+gulp.task('images', () => {
+  gulp.src("resources/assets/images/**/*.+(png|jpg)")
+      .pipe(imagemin())
+      .pipe(gulp.dest("public/images"))
+})
 
-gulp.task('images', function() {
-    gulp.src("app/images/**/*.+(png|jpg)")
-        .pipe(imagemin())
-        .pipe(gulp.dest("dist/images"));
-});
+gulp.task("js", () => {
+  gulp.src("resources/assets/js/*.js")
+      .pipe(uglify())
+      .pipe(gulp.dest("public/js"))
+})
 
-gulp.task('clean', function() {
-    del('dist/');
-});
+gulp.task('clean', () => {
+  del('public/')
+})
 
-gulp.task('html', function() {
-  return gulp.src('app/*.html')
-    .pipe(htmlmin({collapseWhitespace: true}))
-    .pipe(gulp.dest('dist'));
-});
+gulp.task('server', () => {
+  browserSync.init({
+    server: { baseDir: 'public' },
+    open: false
+  })
+})
 
-gulp.task("js", function() {
-        gulp.src("app/js/*.js")
-        .pipe(uglify())
-        .pipe(gulp.dest("dist/js"));
-});
+gulp.task('watch', ['server'], () => {
+  gulp.watch('resources/assets/scss/**/*.scss', ['sass', browserSync.reload])
+  gulp.watch('resources/views/**/*.html', ['html', browserSync.reload])
+  gulp.watch('resources/assets/js/*.js', ['js', browserSync.reload])
+})
 
-gulp.task("copy", function() {
-    gulp.src("app/css/*.css")
-        .pipe(gulp.dest("dist/css/"));
-});
+gulp.task("default", ["sass", "js", "images", "html"])
 
-gulp.task("default", ["sass", "server", "watch"]);
+gulp.task("build", () => {
+  runSequence("clean", "images", "html", "sass", "js")
+})
 
-gulp.task("minify", ["html", "js"]);
-
-gulp.task("build", function() {
-
-    runSequence("clean", "images", "minify", "copy");
-
-});
-
-gulp.task("build:server", ["build"], function() {
-
-    browserSync.init({
-        server: "dist/"
-    });
-
-});
+gulp.task("build:server", ["build"], () => {
+  browserSync.init({
+    server: "public/"
+  })
+})
