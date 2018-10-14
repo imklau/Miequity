@@ -1,0 +1,3 @@
+{
+  "extends": "@tonik/stylelint-config-scss"
+}
