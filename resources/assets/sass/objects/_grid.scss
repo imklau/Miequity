@@ -1,0 +1,162 @@
+.grid {
+  $this: &;
+
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -1rem;
+  margin-right: -1rem;
+
+  &__column {
+    flex: 1;
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    @for $i from 1 through 12 {
+      &--#{$i} {
+        flex-basis: percentage($i / 12);
+        max-width: percentage($i / 12);
+
+        @if $i == 12 {
+          width: 100%;
+        }
+      }
+    }
+
+    @each $breakpoint, $width in $breakpoints {
+      @media (min-width: get-breakpoint($breakpoint)) {
+        @for $i from 1 through 12 {
+          &--#{$i}\@#{$breakpoint} {
+            flex-basis: percentage($i / 12);
+            max-width: percentage($i / 12);
+          }
+        }
+      }
+    }
+
+    &--shrink {
+      flex: 0 1 auto;
+    }
+
+    &--middle {
+      align-self: center;
+    }
+
+    &--bottom {
+      align-self: flex-end;
+    }
+
+    &--baseline {
+      align-self: baseline;
+    }
+
+    &--stretch {
+      align-self: stretch;
+    }
+  }
+
+  &--right {
+    justify-content: flex-end;
+  }
+
+  &--center {
+    justify-content: center;
+  }
+
+  &--justify {
+    justify-content: space-between;
+  }
+
+  &--space {
+    justify-content: space-around;
+  }
+
+  &--middle {
+    align-items: center;
+  }
+
+  &--bottom {
+    align-items: flex-end;
+  }
+
+  &--stretch {
+    align-items: stretch;
+  }
+
+  &--stack {
+    flex-direction: column;
+  }
+
+  &--no-wrap {
+    flex-wrap: nowrap;
+  }
+
+  &--narrow {
+    margin-left: -.5rem;
+    margin-right: -.5rem;
+
+    & > #{$this}__column {
+      padding-left: .5rem;
+      padding-right: .5rem;
+    }
+  }
+
+  &--gapless {
+    margin-left: 0;
+    margin-right: 0;
+
+    & > #{$this}__column {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &--reverse {
+    flex-direction: row-reverse;
+
+    &#{$this}--stackable {
+      @media (max-width: get-breakpoint(medium)) {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+
+  &--stackable {
+    @media (max-width: get-breakpoint(medium)) {
+      flex-direction: column;
+
+      & > #{$this}__column {
+        flex-basis: auto;
+        max-width: 100%;
+      }
+    }
+  }
+
+  &--reversable {
+    @media (min-width: get-breakpoint(small)) {
+      flex-direction: row-reverse;
+
+      &#{$this}--stackable {
+        @media (min-width: get-breakpoint(small)) {
+          flex-direction: column-reverse;
+        }
+      }
+    }
+  }
+
+  &--waffle {
+    margin: -1rem;
+
+    & > #{$this}__column {
+      padding: 1rem;
+    }
+
+    &#{$this}--narrow {
+      margin: -.5rem;
+
+      & > #{$this}__column {
+        padding: .5rem;
+      }
+    }
+  }
+}

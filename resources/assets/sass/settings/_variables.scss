@@ -1,0 +1,68 @@
+// Breakpoints
+// =================================================
+$breakpoints: (
+  xsmall: 480px,
+  small: 768px,
+  medium: 980px,
+  large: 1250px,
+  xlarge: 1450px,
+  xxlarge: 1680px
+);
+
+// Typography
+// =================================================
+$font-general: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$font-secondary: "Roboto Slab", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$root: 16px;
+$root-mobile: 14px;
+
+$headings-base: (
+  h1: 2.2rem,
+  h2: 1.6rem,
+  h3: 1.7rem,
+  h4: 1.2rem,
+  h5: 1.3rem,
+  h6: .9rem
+);
+
+$headings-responsive: (
+  small: (
+    h1: 2.2rem,
+    h2: 2rem,
+    h3: 1.7rem,
+    h4: 1.2rem,
+    h5: 1.3rem,
+    h6: .9rem
+  ),
+  medium: (
+    h1: 2.9rem,
+    h2: 2.22rem,
+    h3: 2rem,
+    h4: 1.68rem,
+    h5: 1.3rem,
+    h6: 1rem
+  ),
+  large: (
+    h1: 2.9rem,
+    h2: 2.22rem,
+    h3: 2rem,
+    h4: 1.68rem,
+    h5: 1.33rem,
+    h6: 1rem
+  )
+);
+
+// Colors
+// =================================================
+$colors: (
+  primary: #efae7c,
+  secondary: #647267,
+  text: #423f57,
+  text-light: #767481,
+  white: #fff,
+  light: #fafafa,
+  gray-light: #f8f8f8,
+  gray: #b8b8c4,
+  dark: #423f57,
+  black: #000,
+);

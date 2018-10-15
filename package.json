@@ -14,7 +14,9 @@
     "javascript:lint": "cross-env NODE_ENV=production gulp javascript:lint --gulpfile=build/build.js",
     "lint": "npm run sass:lint && npm run javascript:lint"
   },
-  "dependencies": {},
+  "dependencies": {
+    "normalize.css": "^8.0.0"
+  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-plugin-external-helpers": "^6.22.0",

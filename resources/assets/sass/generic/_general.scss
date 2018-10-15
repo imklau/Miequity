@@ -1,0 +1,26 @@
+* {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background-color: get-color(white);
+}
+
+body {
+  background-color: get-color(white);
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+svg {
+  fill: currentColor;
+}
+
+ul {
+  margin: 0;
+}

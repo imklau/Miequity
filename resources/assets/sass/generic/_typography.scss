@@ -1,0 +1,58 @@
+html {
+  font-size: $root-mobile;
+  font-family: $font-general;
+  color: get-color(text);
+  line-height: 1.6em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (min-width: get-breakpoint(medium)) {
+    font-size: $root;
+    line-height: 1.7em;
+  }
+}
+
+// Headings
+// =================================================
+@each $heading, $value in $headings-base {
+  #{$heading},
+  .#{$heading} {
+    font-size: $value;
+  }
+}
+
+@each $breakpoint, $value in $breakpoints {
+  @if (map-has-key($headings-responsive, $breakpoint)) {
+    @media (min-width: $value) {
+      @each $heading, $size in map-get($headings-responsive, $breakpoint) {
+        #{$heading},
+        .#{$heading} {
+          font-size: $size;
+        }
+      }
+    }
+  }
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  line-height: 1.25em;
+  font-weight: 400;
+  color: get-color(text);
+  font-family: $font-secondary;
+}
+
+a {
+  color: get-color(text);
+  text-decoration: none;
+}
