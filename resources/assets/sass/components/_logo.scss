@@ -1,0 +1,15 @@
+.logo {
+  display: flex;
+  align-items: center;
+  font-family: $font-secondary;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  & > * + * {
+    margin-left: 1.5rem;
+  }
+
+  &__image {
+    width: 60px;
+  }
+}
