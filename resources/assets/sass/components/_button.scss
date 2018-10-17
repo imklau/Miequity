@@ -1,0 +1,85 @@
+.button {
+  $this: &;
+
+  position: relative;
+  z-index: 0;
+  display: inline-flex;
+  vertical-align: middle;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5em 1.8em;
+  outline: 0;
+  border: 0;
+  background-color: transparent;
+  font-family: $font-general;
+  font-weight: 700;
+  font-size: .85rem;
+  line-height: inherit;
+  color: get-color(black);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 200ms ease;
+
+  & > * + * {
+    margin-left: 1rem;
+  }
+
+  &:hover {
+    #{$this}__icon {
+      transform: translateX(5px);
+    }
+  }
+
+  &__icon {
+    display: flex;
+    transition: 200ms ease;
+  }
+
+  &--flat {
+    padding: 0;
+  }
+
+  &--white {
+    color: get-color(white);
+  }
+
+  &--primary {
+    color: get-color(primary);
+  }
+
+  &--secondary {
+    color: get-color(secondary);
+  }
+
+  &--outline {
+    font-weight: 500;
+
+    &#{$this}--white {
+      border: 1px solid get-color(white);
+
+      &:hover {
+        background-color: get-color(white);
+        color: get-color(secondary);
+      }
+    }
+
+    &#{$this}--primary {
+      border: 1px solid get-color(primary);
+
+      &:hover {
+        background-color: get-color(primary);
+        color: get-color(white);
+      }
+    }
+
+    &#{$this}--secondary {
+      border: 1px solid get-color(secondary);
+
+      &:hover {
+        background-color: get-color(secondary);
+        color: get-color(white);
+      }
+    }
+  }
+}
