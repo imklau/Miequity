@@ -1,0 +1,31 @@
+.menu {
+  display: flex;
+  align-items: center;
+
+  & > * + * {
+    margin-left: 3rem;
+  }
+
+  &__item {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+
+    &--active {
+      position: relative;
+      z-index: 1;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -1rem;
+        transform: translateY(-50%);
+        width: calc(100% + 2rem);
+        height: 4px;
+        background-color: get-color(primary);
+        z-index: -1;
+      }
+    }
+  }
+}
