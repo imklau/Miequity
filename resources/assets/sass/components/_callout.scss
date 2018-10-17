@@ -1,0 +1,27 @@
+.callout {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+
+  @media (min-width: get-breakpoint(medium)) {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+
+  & > * + * {
+    margin-top: 1rem;
+  }
+
+  &__content {
+    & > * + * {
+      margin-top: .5rem;
+    }
+  }
+
+  &__text {
+    color: get-color(white);
+  }
+}
