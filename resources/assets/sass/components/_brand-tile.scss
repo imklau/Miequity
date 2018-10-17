@@ -1,0 +1,34 @@
+.brand-tile {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 4rem;
+  filter: grayscale(100%) opacity(.4);
+  transition: 300ms ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: get-color(info);
+    border-radius: 0 0 5px 5px;
+    opacity: 0;
+    transition: 300ms ease;
+  }
+
+  &:hover {
+    filter: grayscale(0);
+
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  &__image {
+    max-width: 120px;
+  }
+}
