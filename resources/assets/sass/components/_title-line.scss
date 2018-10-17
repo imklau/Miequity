@@ -1,0 +1,13 @@
+.title-line {
+  width: 80px;
+  height: 3px;
+  margin-left: 0;
+  margin-right: 0;
+  background-color: get-color(primary);
+  border: none;
+
+  &--center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
