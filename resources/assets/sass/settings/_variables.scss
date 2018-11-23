@@ -1,7 +1,7 @@
 // Breakpoints
 // =================================================
 $breakpoints: (
-  xsmall: 480px,
+  xsmall: 520px,
   small: 768px,
   medium: 980px,
   large: 1250px,
@@ -63,7 +63,8 @@ $colors: (
   info: #c1e1f4,
   white: #fff,
   light: #fafafa,
-  gray-light: #f8f8f8,
+  gray-lighter: #f8f8f8,
+  gray-light: #eee,
   gray: #b8b8c4,
   dark: #423f57,
   black: #000,
