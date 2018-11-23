@@ -1,11 +1,32 @@
 {% extends 'layouts/layout.html' %}
+{% import 'partials/navbar.html' as nav %}
 
 {% block title %}
   Home
 {% endblock %}
 
 {% block content %}
+  {{ nav.nav('Home') }}
+
+  <main>
+    {% include 'pages/home/header.html' %}
+  </main>
+
+  {% include 'partials/callout.html' %}
+
+  <p class="subtitle">miequity</p>
+
   <h1>HTML Front-end Boilerplate</h1>
+
+  <span class="badge badge--rounded">miequity</span>
+
+  <h1 class="heading h2">What <br> We Believe</h1>
+
+  <hr class="title-line">
+
+  <div class="brand-tile">
+    <img class="brand-tile__image" src="images/classy-logo.png" alt="">
+  </div>
 
   <ul>
     {% for item in links.items %}

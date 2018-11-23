@@ -1,0 +1,38 @@
+.hero {
+  $this: &;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__content {
+    & > * + * {
+      margin-top: 1.5rem;
+    }
+  }
+
+  &__text {
+    font-size: 1.15rem;
+  }
+
+  &--light {
+    #{$this}__heading {
+      color: get_color(white);
+    }
+
+    #{$this}__text {
+      color: get_color(white);
+    }
+  }
+
+  &--center {
+    text-align: center;
+  }
+
+  &--full {
+    min-height: 100vh;
+  }
+}
