@@ -1,3 +1,4 @@
+{% macro nav(active='') %}
 <nav class="navbar">
   <a href="#" class="logo">
     <img class="logo__image" src="images/logo.png" alt="">
@@ -6,28 +7,29 @@
   </a>
 
   <ul class="menu">
-    <li class="menu__item menu__item--active">
+    <li class="menu__item{% if active == 'Home' %} menu__item--active{% endif %}">
       <a href="#">Home</a>
     </li>
 
-    <li class="menu__item">
+    <li class="menu__item{% if active == 'About' %} menu__item--active{% endif %}">
       <a href="#">About</a>
     </li>
 
-    <li class="menu__item">
+    <li class="menu__item{% if active == 'Services' %} menu__item--active{% endif %}">
       <a href="#">Services</a>
     </li>
 
-    <li class="menu__item">
+    <li class="menu__item{% if active == 'Investments' %} menu__item--active{% endif %}">
       <a href="#">Investments</a>
     </li>
 
-    <li class="menu__item">
+    <li class="menu__item{% if active == 'Blog' %} menu__item--active{% endif %}">
       <a href="#">Blog</a>
     </li>
 
-    <li class="menu__item">
+    <li class="menu__item{% if active == 'Contact' %} menu__item--active{% endif %}">
       <a href="#">Contact</a>
     </li>
   </ul>
 </nav>
+{% endmacro %}
