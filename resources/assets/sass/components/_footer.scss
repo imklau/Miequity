@@ -1,0 +1,35 @@
+.footer {
+  padding-top: 3rem;
+  text-align: center;
+
+  @media (min-width: get-breakpoint(xsmall)) {
+    text-align: left;
+  }
+
+  & > * + * {
+    margin-top: 2rem;
+  }
+
+  &__bottom {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-top: 1px solid get-color(gray-light);
+    text-align: center;
+
+    @media (min-width: get-breakpoint(medium)) {
+      text-align: left;
+    }
+
+    & > * + * {
+      margin-top: 1rem;
+
+      @media (min-width: get-breakpoint(medium)) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__text {
+    font-size: .7rem;
+  }
+}

@@ -1,0 +1,11 @@
+.contact-info {
+  padding-top: 1rem;
+  font-size: .75rem;
+  font-style: normal;
+  line-height: 1.6;
+
+  @media (min-width: get-breakpoint(xsmall)) {
+    padding-top: 0;
+    text-align: right;
+  }
+}

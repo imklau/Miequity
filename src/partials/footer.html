@@ -1,0 +1,109 @@
+{% macro footer(active='') %}
+<footer class="footer">
+  <div class="grid">
+    <div class="grid__column grid__column--12 grid__column--6@xsmall">
+      <img src="./images/footer-logo.png" alt="Miequity logo" width="150">
+    </div>
+
+    <div class="grid__column grid__column--12 grid__column--6@xsmall">
+      <address class="contact-info">
+        <dl>
+          <div class="row">
+            <dt class="visuallyhidden">Address</dt>
+
+            <dd>267 Banbury Road  Summertown  Oxford.</dd>
+          </div>
+
+  		    <div class="row">
+            <dt class="visuallyhidden">Address</dt>
+
+            <dd>42 Upper Berkeley Street  London.</dd>
+          </div>
+
+          <div class="row">
+            <dt class="visuallyhidden">Phone</dt>
+
+            <dd>
+              <a href="tel:+447778888989">+44 777888 989</a>
+            </dd>
+          </div>
+
+          <div class="row">
+            <dt class="visuallyhidden">Email</dt>
+
+            <dd>
+              <a href="mailto:hello@massimpressions.com">hello@massimpressions.com</a>
+            </dd>
+          </div>
+        </dl>
+      </address>
+    </div>
+	</div>
+
+  <ul class="footer-nav">
+    <li class="footer-nav__item{% if active == 'Home' %} footer-nav__item--active{% endif %}">
+      <a href="/" class="footer-nav__link">Home</a>
+    </li>
+
+    <li class="footer-nav__item{% if active == 'About' %} footer-nav__item--active{% endif %}">
+      <a href="about.html" class="footer-nav__link">About</a>
+    </li>
+
+    <li class="footer-nav__item{% if active == 'Services' %} footer-nav__item--active{% endif %}">
+      <a href="services.html" class="footer-nav__link">Services</a>
+    </li>
+
+    <li class="footer-nav__item{% if active == 'Investments' %} footer-nav__item--active{% endif %}">
+      <a href="investments.html" class="footer-nav__link">Investments</a>
+    </li>
+
+    <li class="footer-nav__item{% if active == 'Blog' %} footer-nav__item--active{% endif %}">
+      <a href="blog.html" class="footer-nav__link">Blog</a>
+    </li>
+
+    <li class="footer-nav__item{% if active == 'Contact' %} footer-nav__item--active{% endif %}">
+      <a href="contact.html" class="footer-nav__link">Contact</a>
+    </li>
+  </ul>
+
+  <div class="footer__bottom grid grid--justify">
+    <div class="grid__column grid__column--12 grid__column--6@medium">
+      <p class="footer__text paragraph">© 2017 Mass Impressions & Tranmautritam. Make the right impression | | Privacy Policy</p>
+    </div>
+
+    <div class="grid__column grid__column--12 grid__column--6@medium">
+      <ul class="socials">
+        <li>
+          <a href="#">
+            {% include 'icons/facebook.html' %}
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            {% include 'icons/twitter.html' %}
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            {% include 'icons/google-plus.html' %}
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            {% include 'icons/instagram.html' %}
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            {% include 'icons/linkedin.html' %}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+{% endmacro %}

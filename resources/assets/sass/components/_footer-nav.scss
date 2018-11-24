@@ -1,0 +1,33 @@
+.footer-nav {
+  $this: &;
+
+  @media (min-width: get-breakpoint(xsmall)) {
+    display: flex;
+    justify-content: center;
+  }
+
+  @media (min-width: get-breakpoint(medium)) {
+    justify-content: left;
+  }
+
+  & > * + * {
+    margin-top: .5rem;
+
+    @media (min-width: get-breakpoint(xsmall)) {
+      margin-top: 0;
+      margin-left: 2rem;
+    }
+  }
+
+  &__item {
+    font-size: .7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    &--active {
+      #{$this}__link {
+        color: get-color(primary);
+      }
+    }
+  }
+}

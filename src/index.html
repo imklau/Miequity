@@ -1,5 +1,6 @@
 {% extends 'layouts/layout.html' %}
 {% import 'partials/navbar.html' as nav %}
+{% import 'partials/footer.html' as footer %}
 
 {% block title %}
   Home
@@ -18,7 +19,11 @@
 
   {% include 'partials/callout.html' %}
 
-  <p class="subtitle">miequity</p>
+  <div class="container container--large container--center wrapper">
+    {{ footer.footer('Home') }}
+  </div>
+
+  <!-- <p class="subtitle">miequity</p>
 
   <h1>HTML Front-end Boilerplate</h1>
 
@@ -30,13 +35,5 @@
 
   <div class="brand-tile">
     <img class="brand-tile__image" src="images/classy-logo.png" alt="">
-  </div>
-
-  <ul>
-    {% for item in links.items %}
-      <li>
-        <a href="{{ item.link }}">{{ item.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
+  </div> -->
 {% endblock %}
