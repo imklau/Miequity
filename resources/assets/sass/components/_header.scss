@@ -1,0 +1,14 @@
+.header {
+  & > * + * {
+    margin-top: 1.8rem;
+  }
+
+  &__text {
+    font-family: $font-secondary;
+    font-weight: 300;
+  }
+
+  &--center {
+    text-align: center;
+  }
+}

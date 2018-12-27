@@ -17,7 +17,7 @@
   line-height: inherit;
   color: get-color(black);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   cursor: pointer;
   transition: 200ms ease;
 
@@ -34,6 +34,10 @@
   &__icon {
     display: flex;
     transition: 200ms ease;
+  }
+
+  &--small {
+    font-size: .7rem;
   }
 
   &--flat {

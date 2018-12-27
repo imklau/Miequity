@@ -6,6 +6,14 @@
   background-color: get-color(primary);
   border: none;
 
+  &--small {
+    height: 2px;
+  }
+
+  &--white {
+    background-color: get-color(white);
+  }
+
   &--center {
     margin-left: auto;
     margin-right: auto;
